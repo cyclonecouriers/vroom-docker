@@ -28,10 +28,10 @@ jobs:
 
       - name: Build Image
         run: |
-          echo "Building image vroomvrp/vroom-docker:latest"
-          docker buildx build --load --platform ${{ matrix.arch }} --tag vroomvrp/vroom-docker:latest .
+          echo "Building image cyclonecouriers/vroom-docker:latest"
+          docker buildx build --load --platform ${{ matrix.arch }} --tag cyclonecouriers/vroom-docker:latest .
 
       - name: Test tagged image
         if: matrix.arch == 'linux/amd64'
         run : |
-          sudo /bin/bash -c "./tests/test.sh vroomvrp/vroom-docker:latest"      
+          sudo /bin/bash -c "./tests/test.sh cyclonecouriers/vroom-docker:latest"      

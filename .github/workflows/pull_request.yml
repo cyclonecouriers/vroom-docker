@@ -22,9 +22,9 @@ jobs:
 
       - name: Build Image on amd64
         run: |
-          echo "Building image vroomvrp/vroom-docker:latest"
-          docker build --tag vroomvrp/vroom-docker:latest .
+          echo "Building image cyclonecouriers/vroom-docker:latest"
+          docker build --tag cyclonecouriers/vroom-docker:latest .
 
       - name: Test tagged amd64 image
         run : |
-          sudo /bin/bash -c "./tests/test.sh vroomvrp/vroom-docker:latest"
+          sudo /bin/bash -c "./tests/test.sh cyclonecouriers/vroom-docker:latest"

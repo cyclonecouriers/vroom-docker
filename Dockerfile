@@ -15,11 +15,14 @@ RUN echo "Updating apt-get and installing dependencies..." && \
 
 ARG VROOM_RELEASE=v1.13.0
 
+COPY ./patch/valhalla_wrapper.cpp /patch/valhalla_wrapper.cpp
+
 RUN echo "Cloning and installing vroom release ${VROOM_RELEASE}..." && \
     git clone  --recurse-submodules https://github.com/VROOM-Project/vroom.git && \
     cd vroom && \
     git fetch --tags && \
     git checkout -q $VROOM_RELEASE && \
+    cp /patch/valhalla_wrapper.cpp /vroom/src/routing/valhalla_wrapper.cpp && \
     make -C /vroom/src -j$(nproc) && \
     cd /
 
