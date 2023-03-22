@@ -3,7 +3,7 @@ name: Master push
 on:
   push:
     branches:
-      - 'master'
+      # - 'master'
     paths-ignore:
       - '.gitignore'
       - 'docker-compose.yml'

@@ -27,7 +27,7 @@ ValhallaWrapper::ValhallaWrapper(const std::string& profile,
 std::string ValhallaWrapper::get_matrix_query(
   const std::vector<Location>& locations) const {
   const std::string extra_options =
-    "\"costing_options\":{\"auto\":{\"use_highways\":0}}";
+    "\"costing_options\":{\"auto\":{\"use_highways\":0.3}}";
 
   // Building matrix query for Valhalla.
   std::string query = "GET /" + _matrix_service + "?json=";
@@ -56,7 +56,7 @@ std::string
 ValhallaWrapper::get_route_query(const std::vector<Location>& locations,
                                  const std::string& extra_args) const {
   const std::string extra_options =
-    "\"costing_options\":{\"auto\":{\"use_highways\":0}}";
+    "\"costing_options\":{\"auto\":{\"use_highways\":0.3}}";
 
   // Building matrix query for Valhalla.
   std::string query = "GET /" + _route_service + "?json={\"locations\":[";
