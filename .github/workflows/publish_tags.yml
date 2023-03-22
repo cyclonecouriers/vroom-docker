@@ -39,4 +39,4 @@ jobs:
       - name: Build and push tagged Image
         run: |
           echo "Building image cyclonecouriers/vroom-docker:${{ steps.tag.outputs.TAG }}"
-          docker buildx build --push --platform linux/amd64,linux/arm64 --tag cyclonecouriers/vroom-docker:${{ steps.tag.outputs.TAG }} .
+          docker buildx build --push --platform linux/amd64,linux/arm64 --tag ghcr.io/cyclonecouriers/vroom-docker:${{ steps.tag.outputs.TAG }} .
